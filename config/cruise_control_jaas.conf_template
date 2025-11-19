@@ -1,0 +1,11 @@
+//Rename this file to cruise_control_jaas.conf if security is enabled
+//Enter appropriate KafkaClient entry if using the SASL protocol, remove if not
+KafkaClient {
+  com.sun.security.auth.module.Krb5LoginModule required
+  useKeyTab=true
+  keyTab="/path/to/kafka_client.keytab"
+  storeKey=true
+  useTicketCache=false
+  serviceName="kafka"
+  principal="kafka_client@<REALM>";
+};
