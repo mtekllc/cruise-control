@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:11-jdk
 WORKDIR /opt/cruise-control
 COPY .git /opt/cruise-control/.git
 COPY . /opt/cruise-control
