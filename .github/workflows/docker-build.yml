@@ -38,3 +38,11 @@ jobs:
           tags: |
             mtekllc/cruise-control:latest
             mtekllc/cruise-control:${{ steps.sha.outputs.sha_short }}
+
+      - name: Trigger cp-kafka-cc build
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
+          repository: mtekllc/cp-kafka-cc
+          event-type: trigger-kafka-cc-build
+
